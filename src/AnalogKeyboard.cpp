@@ -2,7 +2,7 @@
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Constructor >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 /*Constructor of the AnalogKeyboard object.
-- pinKeyboard: Piano for analogue reading of the keyboard circuit (Required);
+- pinKeyboard: Pin for analogue reading of the keyboard circuit (Required);
 - addressKey0: Analog address of key 0;
 - addressKey1: Analog address of key 1;
 - addressKey2: Analog address of key 2;
