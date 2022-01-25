@@ -1,2 +1,2 @@
 # AnalogKeyboard
-LIB to assist in the use of analog keyboard in embedded systems.
+This library aims to convert analog signals coming from the ESP-32-LAB PCB keyboard into independent keys, but it can also be used in other analog keyboard circuits with the appropriate parameter settings.
