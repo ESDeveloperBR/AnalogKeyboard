@@ -26,6 +26,28 @@ In this example the keyboard was configured as follows:
 - addressKey4: The analog value of key 4 is 3322;
 - ReadingAccuracy: The tolerance value for analog reading is 20%;
 
+## AnalogKeyboard class methods
+- hold: If the key remains pressed, the method returns true;
+```C++
+if(keyboard.hold(0)){
+  Serial.println("Key 0 - HOLD");
+}
+```
+
+- press: If the key is pressed, the method returns true;
+```C++
+if(keyboard.press(0)){
+  Serial.println("Key 0 - PRESS");
+}
+```
+
+- release: If the key is released after being pressed, the method returns true;
+```C++
+if(keyboard.release(0)){
+  Serial.println("Key 0 - RELEASE");
+}
+```
+
 ## Examples of practical applications
 ### Press and release key
 ```C++
