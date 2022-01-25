@@ -101,3 +101,6 @@ void loop() {
   }
 }
 ```
+
+### Electronic schematic
+![Electronic schematic of a keyboard with 5 keys](schematic/SchematicAnalogKeyboard.png)
