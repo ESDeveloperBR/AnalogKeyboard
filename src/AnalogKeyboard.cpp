@@ -56,3 +56,37 @@ boolean AnalogKeyboard::hold(uint8_t key){
     return false;
 }
 
+
+
+
+
+
+
+boolean AnalogKeyboard::press(uint8_t key){
+    if( !hold(key) & !_keyPress[key] ) {
+        _keyPress[key] = true;
+    } else if(hold(key) & _keyPress[key] ){
+        _keyPress[key] = false;
+        return true;
+    }
+    return false;
+}
+
+
+
+
+
+
+
+boolean AnalogKeyboard::release(uint8_t key){
+    /*
+    if( !hold(key) & !_keyPress ) {
+        _keyPress = true;
+    } else if(hold(key) & _keyPress ){
+        _keyPress = false;
+        return true;
+    }
+    */
+
+    return false;
+}
