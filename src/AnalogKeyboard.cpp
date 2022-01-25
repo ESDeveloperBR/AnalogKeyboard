@@ -1,8 +1,14 @@
 #include "AnalogKeyboard.h"
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Constructor >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-/* #Creates the object to be used as Keyboard and assigns the pin to which the analog readings will be taken.
-- pinKeyboard: Pin for analog reading of keyboard circuit;
+/*Constructor of the AnalogKeyboard object.
+- pinKeyboard: Piano for analogue reading of the keyboard circuit (Required);
+- addressKey0: Analog address of key 0;
+- addressKey1: Analog address of key 1;
+- addressKey2: Analog address of key 2;
+- addressKey3: Analog address of key 3;
+- addressKey4: Analog address of key 4;
+- readingAccuracy: Value in percentage to adjust the recognition accuracy of the analog reading of each key.
 */
 AnalogKeyboard::AnalogKeyboard(uint8_t pinKeyboard, uint16_t addressKey0, uint16_t addressKey1, uint16_t addressKey2, uint16_t addressKey3, uint16_t addressKey4, uint8_t readingAccuracy) {
     _pinKeyboard     = pinKeyboard;
@@ -16,39 +22,13 @@ AnalogKeyboard::AnalogKeyboard(uint8_t pinKeyboard, uint16_t addressKey0, uint16
 
 }
 
-
-
-
-
-
-
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Hold >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/* HOLD key method.
+- Key: Number of selected key;
+*/
 boolean AnalogKeyboard::hold(uint8_t key){
     uint16_t readValue = analogRead(_pinKeyboard);
     uint16_t toleranceValue = _addressKey[key] * (float(_readingAccuracy) / 100);
-
-    /*
-    if(readValue != 4095){
-        Serial.print("key: ");
-        Serial.println(key);
-
-        Serial.print("readValue: ");
-        Serial.println(readValue);
-
-        Serial.print("_addressKey[key]: ");
-        Serial.println(_addressKey[key]);
-
-        Serial.print("toleranceValue: ");
-        Serial.println(toleranceValue);
-
-        Serial.print("ValorMenor: ");
-        Serial.println(_addressKey[key] - toleranceValue);
-
-        Serial.print("ValorMaior: ");
-        Serial.println(_addressKey[key] + toleranceValue);
-
-        Serial.println("-----------");
-    }
-    */
 
     if( ((_addressKey[key] - toleranceValue) <= readValue )  &&  ( readValue <= (_addressKey[key] + toleranceValue) )  ) { 
         return true;
@@ -56,12 +36,10 @@ boolean AnalogKeyboard::hold(uint8_t key){
     return false;
 }
 
-
-
-
-
-
-
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Press >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/* Method PRESS the key.
+- Key: Number of selected key;
+*/
 boolean AnalogKeyboard::press(uint8_t key){
     if( !hold(key) & !_keyPress[key] ) {
         _keyPress[key] = true;
@@ -72,28 +50,17 @@ boolean AnalogKeyboard::press(uint8_t key){
     return false;
 }
 
-
-
-
-
-
-
-boolean AnalogKeyboard::release(uint8_t key){
-/*
-    if( !hold(key) & !_keyPress[key] ) {
-        _keyPress[key] = true;
-    } else if(hold(key) & _keyPress[key] ){
-        _keyPress[key] = false;
-        return true;
-    }
-    return false;
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Release >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+/* Method RELEASE the key.
+- Key: Number of selected key;
 */
-    if( !hold(key) & !_keyPress[key] ) {
-        _keyPress[key] = true;
+boolean AnalogKeyboard::release(uint8_t key){
+    if( !hold(key) & !_keyRelease[key] ) {
+        _keyRelease[key] = true;
         return true;
 
-    } else if(hold(key) & _keyPress[key] ){
-        _keyPress[key] = false;
+    } else if(hold(key) & _keyRelease[key] ){
+        _keyRelease[key] = false;
     }
     return false;
 }

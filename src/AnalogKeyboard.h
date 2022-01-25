@@ -14,7 +14,7 @@ class AnalogKeyboard {
         uint8_t  _pinKeyboard;      // Keyboard read pin 
         uint16_t _addressKey[5];    // Key analog address
         boolean  _keyPress[5] = {false, false, false, false, false};      // Checks if the key is pressed
-        //boolean  _keyPress[5] = {true, true, true, true, true};      // Checks if the key is pressed
+        boolean  _keyRelease[5] = {true, true, true, true, true};      // Checks if the key is release
         uint8_t  _readingAccuracy;  // Reading accuracy over established analog values
 
 };
