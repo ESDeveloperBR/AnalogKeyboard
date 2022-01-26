@@ -1,0 +1,4 @@
+AnalogKeyboard  KEYWORD1
+hold    KEYWORD2
+press   KEYWORD2
+release KEYWORD2
