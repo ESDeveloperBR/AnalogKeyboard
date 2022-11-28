@@ -1,11 +1,16 @@
-#ifndef __ANALOGKEYBOARD_h
-#define __ANALOGKEYBOARD_h
-
-#include "Arduino.h"
-
-/**
-* @brief Class responsible for converting the analog keyboard reading into independent keys.
+/*
+  Autor: Eder João Santini
+  WhatsApp +55 69 98463 9009
+  Data de criação: 05/31/20222
 */
+
+#ifndef _ANALOGKEYBOARD_h
+#define _ANALOGKEYBOARD_h
+
+#include <Arduino.h>
+
+#define ANALOGKEYBOARD_VERSION "0.3.5 date 16/08/2022" // mm/dd/yyyy
+// <<<<<<<<<<<<<<< Classe AnalogKeyboard >>>>>>>>>>>>>>
 class AnalogKeyboard {
     private:    
         uint8_t  _pinKeyboard;      // Keyboard read pin 
@@ -15,10 +20,10 @@ class AnalogKeyboard {
         uint8_t  _readingAccuracy;  // Reading accuracy over established analog values
     
     public:
-        AnalogKeyboard(uint8_t pinKeyboard, uint16_t addressKey0 = 0, uint16_t addressKey1 = 870, uint16_t addressKey2 = 1657, uint16_t addressKey3 = 2457, uint16_t addressKey4 = 3322, uint8_t readingAccuracy = 20 );
+        AnalogKeyboard(uint8_t pinKeyboard, uint16_t addressKey0 = 0, uint16_t addressKey1 = 870, uint16_t addressKey2 = 1657, uint16_t addressKey3 = 2457, uint16_t addressKey4 = 3322, uint8_t readingAccuracy = 21 );
         boolean hold(uint8_t key);
         boolean press(uint8_t key);
         boolean release(uint8_t key);
-};
 
+};
 #endif

@@ -1,0 +1,20 @@
+{
+    "name": "AnalogKeyboard",
+    "keywords": "AnalogKeyboard, hold, press, release",
+    "description": "Library to facilitate the development of programs that use the ES32Lab board.",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/ESDeveloperBR/AnalogKeyboard.git"
+    },
+    "authors":
+    {
+        "name": "AnalogKeyboard",
+        "url": "https://github.com/ESDeveloperBR/AnalogKeyboard.git",
+        "maintainer": true
+    },
+    "version": "0.3.5",
+    "license": "MIT",
+    "frameworks": "arduino",
+    "platforms": "arduino, esp8266, esp32"
+}
