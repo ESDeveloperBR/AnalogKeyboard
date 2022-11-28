@@ -1,6 +1,6 @@
 {
     "name": "AnalogKeyboard",
-    "keywords": "AnalogKeyboard, hold, press, release",
+    "keywords": "AnalogKeyboard, hold, press, release, analog, keyboard, ESDeveloperBR, ESDeveloper",
     "description": "Library to facilitate the development of programs that use the ES32Lab board.",
     "repository":
     {
