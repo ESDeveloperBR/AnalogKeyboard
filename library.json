@@ -1,5 +1,6 @@
 {
     "name": "AnalogKeyboard",
+    "version": "0.3.6",
     "keywords": "AnalogKeyboard, hold, press, release, analog, keyboard, ESDeveloperBR, ESDeveloper, Eder Santini",
     "description": "Library developed by ESDeveloperBR that allows the operation of an analog keyboard with 5 keys, using only an analog GPIO. ATTENTION: The default settings for analog readings are set to 12Bits, a perfect setting for the ESP32.",
     "repository":
@@ -10,11 +11,12 @@
     "authors":
     {
         "name": "ESDeveloperBR",
+        "email": "esdeveloperbr@gmail.com",
         "url": "https://github.com/ESDeveloperBR/AnalogKeyboard",
         "maintainer": true
     },
-    "version": "0.3.6",
     "license": "MIT",
     "frameworks": "arduino",
-    "platforms": "arduino, esp8266, espressif32"
+    "platforms": "espressif8266, espressif32, ststm32, arduino",
+    "headers": "AnalogKeyboard.h"
 }
