@@ -1,6 +1,6 @@
 /*
-Author: Eder João Santini
-Library Download: https://github.com/ederjsantini/AnalogKeyboard
+Author: Eder Joao Santini
+Library Download: https://github.com/ESDeveloperBR/AnalogKeyboard
 Example of using the LIB AnalogKeyboard.
 - Hold down key.
 */

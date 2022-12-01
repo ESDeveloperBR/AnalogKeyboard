@@ -1,15 +1,20 @@
-/*
-  Autor: Eder João Santini
-  WhatsApp +55 69 98463 9009
-  Data de criação: 05/31/20222
-*/
+/**
+ * @file AnalogKeyboard.h
+ * @author ESDeveloperBR (esdeveloperbr@gmail.com)
+ * @brief Class responsible for converting the analog keyboard reading into independent keys.
+ * @version 0.3.6
+ * @date 2022-12-01
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
 #ifndef _ANALOGKEYBOARD_h
 #define _ANALOGKEYBOARD_h
 
 #include <Arduino.h>
 
-#define ANALOGKEYBOARD_VERSION "0.3.5 date 16/08/2022" // mm/dd/yyyy
+#define ANALOGKEYBOARD_VERSION "0.3.6 date 01/12/2022" // dd/mm/yyyy
 // <<<<<<<<<<<<<<< Classe AnalogKeyboard >>>>>>>>>>>>>>
 class AnalogKeyboard {
     private:    
